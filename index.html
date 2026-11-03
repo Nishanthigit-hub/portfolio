@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nishanthi R | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --accent:#2563eb;
+    --bg:#f8fafc;
+    --card:#ffffff;
+    --text:#1e293b;
+    --muted:#64748b;
+    --border:#e2e8f0;
+}
+
+body.dark {
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#f1f5f9;
+    --muted:#cbd5e1;
+    --border:#334155;
+}
+
+body.peach {--accent:#ff8668;}
+body.pink {--accent:#db2777;}
+body.blue {--accent:#2563eb;}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body {
+    font-family:'Plus Jakarta Sans',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    transition:background .3s,color .3s;
+}
+
+a {text-decoration:none;color:inherit;}
+button {font-family:inherit;cursor:pointer;}
+
+section {
+    padding:100px 8%;
+    scroll-margin-top:75px;
+}
+
+.section-title {
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2 {
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p {color:var(--muted);}
+.accent {color:var(--accent);}
+
+.card {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px;
+    transition:.35s;
+}
+
+.card:hover {
+    transform:translateY(-9px);
+    box-shadow:0 18px 40px rgba(37,99,235,.15);
+    border-color:var(--accent);
+}
+
+.btn {
+    display:inline-block;
+    padding:13px 23px;
+    background:var(--accent);
+    color:white;
+    border-radius:11px;
+    font-weight:600;
+    border:none;
+    transition:.3s;
+}
+
+.btn:hover {
+    transform:translateY(-4px);
+    opacity:.9;
+}
+
+.outline-btn {
+    background:transparent;
+    border:2px solid var(--accent);
+    color:var(--accent);
+}
+
+/* NAVIGATION */
+
+header {
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+}
+
+nav {
+    max-width:1250px;
+    margin:auto;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:20px;
+    font-weight:800;
+}
+
+.logo-box {
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--accent),#9333ea);
+    display:grid;
+    place-items:center;
+    color:white;
+}
+
+.nav-links {
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.nav-links a {
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover {color:var(--accent);}
+
+.nav-actions {display:flex;gap:10px;}
+
+.icon-btn {
+    border:none;
+    padding:11px 13px;
+    border-radius:10px;
+    background:var(--bg);
+    color:var(--text);
+    font-size:16px;
+}
+
+.menu-btn {display:none;}
+
+/* HOME */
+
+#home {
+    min-height:100vh;
+    padding-top:140px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+#heroCanvas {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:0;
+}
+
+.home-grid {
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:50px;
+    align-items:center;
+    position:relative;
+    z-index:1;
+}
+
+.availability {
+    display:inline-block;
+    padding:9px 15px;
+    border-radius:30px;
+    background:var(--card);
+    border:1px solid var(--border);
+    color:var(--accent);
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.availability span {
+    display:inline-block;
+    height:8px;
+    width:8px;
+    background:#22c55e;
+    border-radius:50%;
+    margin-right:7px;
+}
+
+.home-text h1 {
+    font-size:clamp(38px,5vw,65px);
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.gradient-name {
+    background:linear-gradient(90deg,var(--accent),#9333ea);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.home-text h3 {
+    font-size:21px;
+    color:var(--muted);
+}
+
+.home-text p {
+    color:var(--muted);
+    line-height:1.9;
+    margin:18px 0;
+}
+
+.objective {
+    padding:16px;
+    border-left:4px solid var(--accent);
+    background:var(--card);
+    border-radius:10px;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.home-buttons {
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:25px;
+}
+
+.profile-card {
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:27px;
+    border-radius:28px;
+    box-shadow:0 20px 50px rgba(0,0,0,.10);
+}
+
+.profile-top {
+    display:flex;
+    align-items:center;
+    gap:17px;
+    margin-bottom:25px;
+}
+
+.profile-avatar {
+    width:75px;
+    height:75px;
+    border-radius:20px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,var(--accent),#9333ea);
+    color:white;
+    font-size:28px;
+    font-weight:800;
+}
+
+.profile-top h3 {margin-bottom:6px;}
+.profile-top p {color:var(--muted);font-size:12px;}
+
+.profile-stats {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-bottom:22px;
+}
+
+.stat {
+    padding:15px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:13px;
+}
+
+.stat strong {
+    display:block;
+    color:var(--accent);
+    font-size:15px;
+}
+
+.stat small {color:var(--muted);font-size:11px;}
+
+.tech-list,.skill-list {
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:12px;
+}
+
+.tech,.skill {
+    padding:8px 12px;
+    background:var(--bg);
+    border:1px solid var(--border);
+    border-radius:9px;
+    font-size:12px;
+    font-weight:600;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.card h3 {margin-bottom:14px;}
+.card p {color:var(--muted);line-height:1.8;}
+
+/* EDUCATION */
+
+.education-list {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:25px;
+    margin-top:35px;
+}
+
+.education-card {
+    position:relative;
+    overflow:hidden;
+    padding:28px;
+    border-radius:22px;
+    background:var(--card);
+    border:1px solid var(--border);
+    box-shadow:0 12px 30px rgba(0,0,0,.07);
+}
+
+.education-card::before {
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,var(--accent),#9333ea,#ec4899);
+}
+
+.education-icon {
+    width:60px;
+    height:60px;
+    display:grid;
+    place-items:center;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--accent),#9333ea);
+    color:white;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.education-level {
+    color:var(--accent);
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
+.education-card h3 {
+    font-size:20px;
+    margin:12px 0;
+}
+
+.institution {
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.institution i {
+    color:var(--accent);
+    margin-right:6px;
+}
+
+.education-result {
+    margin-top:22px;
+    padding:17px;
+    border-radius:15px;
+    background:var(--bg);
+    border:1px solid var(--border);
+}
+
+.result-label {
+    display:block;
+    color:var(--muted);
+    font-size:10px;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.education-result h4 {
+    font-size:29px;
+    color:var(--accent);
+}
+
+.result-bar {
+    height:7px;
+    border-radius:20px;
+    background:var(--border);
+    overflow:hidden;
+    margin-top:12px;
+}
+
+.result-fill {
+    height:100%;
+    border-radius:20px;
+    background:linear-gradient(90deg,var(--accent),#ec4899);
+}
+
+.hlc-fill {width:90%;}
+.sslc-fill {width:95%;}
+
+.education-description {
+    margin-top:17px;
+    font-size:12px;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+/* INTERNSHIP */
+
+.experience-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.experience-card h3 {color:var(--accent);}
+.experience-card p {margin:8px 0;}
+
+.experience-card ul {
+    margin:15px 0 0 20px;
+    color:var(--muted);
+    line-height:2;
+}
+
+.status {
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:20px;
+    background:#dcfce7;
+    color:#166534;
+    font-size:11px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+body.dark .status {
+    background:#14532d;
+    color:#dcfce7;
+}
+
+.learning-status {
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+body.dark .learning-status {
+    background:#1e3a8a;
+    color:#dbeafe;
+}
+
+/* PROJECTS */
+
+.project-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.project-banner {
+    width: 100%;
+    height: 140px;
+    background: var(--bg);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    font-size: 32px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border);
+}
+
+.project-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.project-actions .btn {
+    padding: 8px 14px;
+    font-size: 11px;
+}
+
+.project-card h3 {margin-bottom:12px;}
+.project-card p {margin-bottom:15px;}
+
+.project-tag {
+    display:inline-block;
+    padding:6px 9px;
+    border-radius:7px;
+    background:var(--bg);
+    color:var(--accent);
+    font-size:10px;
+    font-weight:700;
+    margin:3px;
+}
+
+/* CERTIFICATIONS SECTION */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.cert-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 25px;
+    transition: .35s;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(37,99,235,.1);
+}
+
+.cert-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    background: var(--bg);
+    color: var(--accent);
+    border-radius: 12px;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.cert-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.cert-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* CONTACT */
+
+.contact-intro {
+    max-width:650px;
+    text-align:center;
+    margin:-20px auto 35px;
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.contact-grid {
+    max-width:950px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.contact-card {
+    text-align:center;
+    display:block;
+}
+
+.contact-card i {
+    color:var(--accent);
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.contact-card h3 {margin-bottom:8px;}
+.contact-card p {font-size:12px;overflow-wrap:anywhere;}
+
+.contact-card span {
+    display:inline-block;
+    margin-top:15px;
+    color:var(--accent);
+    font-weight:700;
+    font-size:12px;
+}
+
+/* DIGITAL CARD */
+
+.modal {
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:300;
+    background:rgba(0,0,0,.75);
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.modal.show {display:flex;}
+
+.digital-card {
+    width:100%;
+    max-width:390px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:28px;
+    text-align:center;
+    position:relative;
+    box-shadow:0 20px 60px rgba(0,0,0,.3);
+    animation:cardPop .4s ease;
+}
+
+@keyframes cardPop {
+    from {opacity:0;transform:scale(.85);}
+    to {opacity:1;transform:scale(1);}
+}
+
+.close-modal {
+    position:absolute;
+    top:15px;
+    right:17px;
+    border:none;
+    background:transparent;
+    color:var(--muted);
+    font-size:22px;
+}
+
+.digital-avatar {
+    width:85px;
+    height:85px;
+    display:grid;
+    place-items:center;
+    border-radius:23px;
+    margin:10px auto 17px;
+    color:white;
+    font-size:30px;
+    font-weight:800;
+    background:linear-gradient(135deg,var(--accent),#9333ea);
+}
+
+.digital-role {
+    color:var(--accent);
+    font-size:13px;
+    font-weight:700;
+}
+
+.digital-info {
+    margin:22px 0;
+    text-align:left;
+    line-height:2.2;
+    color:var(--muted);
+    font-size:13px;
+}
+
+.digital-info i {
+    width:22px;
+    color:var(--accent);
+}
+
+.digital-actions {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.digital-actions button {flex:1;min-width:120px;}
+
+/* THEMES */
+
+.theme-picker {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    margin-top:35px;
+}
+
+.theme-dot {
+    height:30px;
+    width:30px;
+    border-radius:50%;
+    border:2px solid white;
+    outline:1px solid var(--border);
+}
+
+.theme-dot.peach {background:#e76f51;}
+.theme-dot.pink {background:#db2777;}
+.theme-dot.blue {background:#2563eb;}
+
+/* CHATBOT */
+
+.chat-toggle {
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    z-index:200;
+    height:58px;
+    width:58px;
+    border:none;
+    border-radius:50%;
+    background:var(--accent);
+    color:white;
+    font-size:23px;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.chat-box {
+    display:none;
+    flex-direction:column;
+    position:fixed;
+    bottom:95px;
+    right:25px;
+    z-index:200;
+    width:330px;
+    height:420px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:17px;
+    overflow:hidden;
+    box-shadow:0 10px 35px rgba(0,0,0,.2);
+}
+
+.chat-box.show {display:flex;}
+
+.chat-header {
+    background:var(--accent);
+    color:white;
+    padding:16px;
+    font-weight:700;
+    display:flex;
+    justify-content:space-between;
+}
+
+.chat-header button {
+    border:none;
+    color:white;
+    background:transparent;
+}
+
+.chat-messages {
+    flex:1;
+    padding:15px;
+    overflow-y:auto;
+    font-size:12px;
+}
+
+.chat-message {
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+    max-width:90%;
+    line-height:1.6;
+}
+
+.bot-message {
+    background:var(--bg);
+    color:var(--text);
+}
+
+.user-message {
+    background:var(--accent);
+    color:white;
+    margin-left:auto;
+}
+
+.chat-input {
+    display:flex;
+    padding:10px;
+    gap:7px;
+    border-top:1px solid var(--border);
+}
+
+.chat-input input {
+    flex:1;
+    min-width:0;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:var(--bg);
+    color:var(--text);
+    outline:none;
+}
+
+.chat-input button {
+    padding:10px 14px;
+    border:none;
+    border-radius:8px;
+    background:var(--accent);
+    color:white;
+}
+
+/* FOOTER */
+
+footer {
+    padding:28px;
+    text-align:center;
+    color:var(--muted);
+    background:var(--card);
+    border-top:1px solid var(--border);
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* SLIDE ANIMATIONS */
+
+.reveal {
+    opacity:0;
+    transform:translateY(55px);
+    transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal-left {
+    opacity:0;
+    transform:translateX(-80px);
+    transition:opacity .9s ease,transform .9s ease;
+}
+
+.reveal-right {
+    opacity:0;
+    transform:translateX(80px);
+    transition:opacity .9s ease,transform .9s ease;
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active {
+    opacity:1;
+    transform:translate(0,0);
+}
+
+.home-text {
+    animation:slideFromLeft 1s ease both;
+}
+
+.profile-card {
+    animation:slideFromRight 1.2s ease both;
+}
+
+@keyframes slideFromLeft {
+    from {opacity:0;transform:translateX(-100px);}
+    to {opacity:1;transform:translateX(0);}
+}
+
+@keyframes slideFromRight {
+    from {opacity:0;transform:translateX(100px);}
+    to {opacity:1;transform:translateX(0);}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px) {
+    .project-grid, .cert-grid {grid-template-columns:repeat(2,1fr);}
+    .education-list {grid-template-columns:repeat(2,1fr);}
+    .nav-links {gap:10px;}
+}
+
+@media(max-width:750px) {
+    .menu-btn {display:block;}
+
+    .nav-links {
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        padding:20px;
+        background:var(--card);
+        flex-direction:column;
+        align-items:flex-start;
+        border-bottom:1px solid var(--border);
+    }
+
+    .nav-links.show {display:flex;}
+
+    .home-grid {
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .home-text h1 {font-size:40px;}
+    .home-buttons {justify-content:center;}
+
+    .profile-card {
+        max-width:420px;
+        margin:auto;
+        text-align:left;
+    }
+
+    .about-grid,
+    .experience-grid,
+    .project-grid,
+    .cert-grid,
+    .contact-grid,
+    .education-list {
+        grid-template-columns:1fr;
+    }
+
+    section {padding:85px 6%;}
+    .section-title h2 {font-size:28px;}
+
+    .chat-box {
+        right:5%;
+        width:90%;
+    }
+
+    .reveal-left,.reveal-right {
+        transform:translateY(40px);
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        scroll-behavior:auto !important;
+        animation:none !important;
+        transition:none !important;
+    }
+
+    .reveal,.reveal-left,.reveal-right {
+        opacity:1;
+        transform:none;
+    }
+}
+</style>
+</head>
+
+<body class="blue">
+
+<header>
+<nav>
+    <a href="#home" class="logo">
+        <span class="logo-box">NR</span>
+        <span>Nishanthi R</span>
+    </a>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#education">Education</a>
+        <a href="#internship">Internship</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" title="Dark / Light Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <button class="icon-btn" onclick="openDigitalCard()" title="Digital Card">
+            <i class="fas fa-id-card"></i>
+        </button>
+
+        <button class="icon-btn menu-btn" id="menuBtn" title="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+</header>
+
+<main>
+
+<!-- HOME -->
+<section id="home">
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="home-grid">
+
+        <div class="home-text">
+            <div class="availability">
+                <span></span>
+                Open to Learning and Career Opportunities
+            </div>
+
+            <h1>
+                Hi, I'm
+                <span class="gradient-name">Nishanthi R</span>
+            </h1>
+
+            <h3>Full Stack Development Intern</h3>
+
+            <p>
+                I am an enthusiastic learner interested in web development,
+                Python programming, database management, and building
+                useful software applications with modern technologies.
+            </p>
+
+            <div class="objective">
+                <strong>
+                    Career Objective: To improve my technical knowledge,
+                    strengthen my full-stack development skills, and
+                    contribute to useful real-world software projects.
+                </strong>
+            </div>
+
+            <div class="home-buttons">
+                <a href="#contact" class="btn">
+                    Get in Touch <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="#projects" class="btn outline-btn">
+                    View Projects
+                </a>
+
+                <button class="btn" onclick="openDigitalCard()">
+                    <i class="fas fa-id-card"></i> Digital Card
+                </button>
+            </div>
+        </div>
+
+        <div class="profile-card">
+            <div class="profile-top">
+                <div class="profile-avatar">NR</div>
+                <div>
+                    <h3>Nishanthi R</h3>
+                    <p>Full Stack Development Intern</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Thanjavur, India</p>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat">
+                    <strong>Python</strong>
+                    <small>Programming</small>
+                </div>
+                <div class="stat">
+                    <strong>Web Development</strong>
+                    <small>Frontend Skills</small>
+                </div>
+                <div class="stat">
+                    <strong>MySQL</strong>
+                    <small>Database</small>
+                </div>
+                <div class="stat">
+                    <strong>Django</strong>
+                    <small>Backend Learning</small>
+                </div>
+            </div>
+
+            <h4>Core Technologies</h4>
+            <div class="tech-list">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">Python</span>
+                <span class="tech">MySQL</span>
+                <span class="tech">Django</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="section-title">
+        <h2>About <span class="accent">Me</span></h2>
+        <p>Know more about my background and technical interests</p>
+    </div>
+
+    <div class="about-grid">
+        <div class="card">
+            <h3><i class="fas fa-user accent"></i> Who I Am</h3>
+            <p>
+                I am Nishanthi R, an enthusiastic learner interested
+                in programming, web development, and software development.
+                I enjoy practising coding and creating projects that
+                help solve real-world problems.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fas fa-code accent"></i> Technical Skills</h3>
+            <div class="skill-list">
+                <span class="skill">Python</span>
+                <span class="skill">HTML</span>
+                <span class="skill">CSS</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">MySQL</span>
+                <span class="skill">Django</span>
+                <span class="skill">Excel</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3><i class="fas fa-laptop-code accent"></i> Interests</h3>
+            <p>
+                Full Stack Development, Frontend Development,
+                Backend Development, Database Management,
+                and Software Development.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3><i class="fas fa-bullseye accent"></i> Current Learning</h3>
+            <p>
+                Improving my knowledge of full-stack development,
+                Python programming, Django, and database operations
+                through practical coding exercises.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <div class="section-title">
+        <h2>My <span class="accent">Education</span></h2>
+        <p>Building my knowledge, one step at a time.</p>
+    </div>
+
+    <div class="education-list">
+
+        <div class="education-card">
+            <div class="education-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span class="education-level">UNDERGRADUATE</span>
+            <h3>College Education</h3>
+            <p class="institution">
+                <i class="fas fa-university"></i>
+                E.G.S. Pillay Engineering College
+            </p>
+            <div class="education-result">
+                <span class="result-label">ACADEMIC PERFORMANCE</span>
+                <h4>9.5 <small>/ 10 CGPA</small></h4>
+            </div>
+            <p class="education-description">
+                Developing technical knowledge and practical skills
+                to prepare for a career in technology.
+            </p>
+        </div>
+
+        <div class="education-card">
+            <div class="education-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <span class="education-level">HIGHER SECONDARY</span>
+            <h3>HLC / 12th Standard</h3>
+            <p class="institution">
+                <i class="fas fa-school"></i>
+                R.C. Fatima Matric Hr. Sec. School
+            </p>
+            <div class="education-result">
+                <span class="result-label">ACADEMIC PERFORMANCE</span>
+                <h4>90%</h4>
+                <div class="result-bar">
+                    <div class="result-fill hlc-fill"></div>
+                </div>
+            </div>
+            <p class="education-description">
+                Strengthened my academic foundation and prepared
+                for higher education.
+            </p>
+        </div>
+
+        <div class="education-card">
+            <div class="education-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <span class="education-level">SECONDARY SCHOOL</span>
+            <h3>SSLC / 10th Standard</h3>
+            <p class="institution">
+                <i class="fas fa-school"></i>
+                R.C. Fatima Matric Hr. Sec. School
+            </p>
+            <div class="education-result">
+                <span class="result-label">ACADEMIC PERFORMANCE</span>
+                <h4>95%</h4>
+                <div class="result-bar">
+                    <div class="result-fill sslc-fill"></div>
+                </div>
+            </div>
+            <p class="education-description">
+                Built a strong foundation in core subjects and
+                developed my learning skills.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- INTERNSHIP -->
+<section id="internship">
+    <div class="section-title">
+        <h2>Internship & <span class="accent">Experience</span></h2>
+        <p>My internship and practical learning activities</p>
+    </div>
+
+    <div class="experience-grid">
+
+        <div class="card experience-card">
+            <span class="status">Ongoing Internship</span>
+            <h3>Full Stack Development Intern</h3>
+            <p><strong>Logirtha Tech Pvt. Ltd.</strong></p>
+            <p><i class="fas fa-location-dot accent"></i> Thanjavur</p>
+            <p><i class="fas fa-calendar accent"></i> Ongoing</p>
+            <ul>
+                <li>Learning frontend web development.</li>
+                <li>Practising HTML, CSS, and JavaScript.</li>
+                <li>Learning Python programming.</li>
+                <li>Understanding database operations using MySQL.</li>
+                <li>Practising full-stack development concepts.</li>
+            </ul>
+            <div class="tech-list">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">Python</span>
+                <span class="tech">MySQL</span>
+            </div>
+        </div>
+
+        <div class="card experience-card">
+            <span class="status learning-status">Practical Learning</span>
+            <h3>Python Programming Practice</h3>
+            <p><strong>Self-Learning and Coding Practice</strong></p>
+            <p><i class="fas fa-laptop-code accent"></i> Programming Practice</p>
+            <ul>
+                <li>Practising Python fundamentals and logic building.</li>
+                <li>Working with lists and dictionaries.</li>
+                <li>Creating menu-driven CRUD programs.</li>
+                <li>Connecting Python applications with MySQL.</li>
+                <li>Practising Excel data handling with Python.</li>
+            </ul>
+            <div class="tech-list">
+                <span class="tech">Python</span>
+                <span class="tech">MySQL</span>
+                <span class="tech">Pandas</span>
+                <span class="tech">Excel</span>
+            </div>
+        </div>
+
+        <div class="card experience-card">
+            <span class="status learning-status">Project-Based Learning</span>
+            <h3>Web Development Practice</h3>
+            <p><strong>Personal Learning Activities</strong></p>
+            <p><i class="fas fa-globe accent"></i> Web Development</p>
+            <ul>
+                <li>Building webpage layouts using HTML.</li>
+                <li>Designing responsive pages using CSS.</li>
+                <li>Adding interactions using JavaScript.</li>
+                <li>Practising navigation and form layouts.</li>
+                <li>Learning how frontend and backend work together.</li>
+            </ul>
+            <div class="tech-list">
+                <span class="tech">HTML</span>
+                <span class="tech">CSS</span>
+                <span class="tech">JavaScript</span>
+            </div>
+        </div>
+
+        <div class="card experience-card">
+            <span class="status learning-status">Database Practice</span>
+            <h3>Database Management Practice</h3>
+            <p><strong>Personal Learning Activities</strong></p>
+            <p><i class="fas fa-database accent"></i> Database Learning</p>
+            <ul>
+                <li>Creating and managing MySQL tables.</li>
+                <li>Practising INSERT, SELECT, UPDATE, and DELETE.</li>
+                <li>Connecting Python with MySQL.</li>
+                <li>Understanding database records and queries.</li>
+            </ul>
+            <div class="tech-list">
+                <span class="tech">MySQL</span>
+                <span class="tech">Python</span>
+                <span class="tech">SQL</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="section-title">
+        <h2>My <span class="accent">Projects</span></h2>
+        <p>Real-world applications and practical coding exercises</p>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="card project-card">
+            <div class="project-banner">
+                <i class="fas fa-hospital-user"></i>
+            </div>
+            <h3>FairQueue Hospital Management</h3>
+            <p>
+                A hospital queue management project concept. 
+                Patients can join a queue, and the system allocates 
+                eligible doctors automatically with notifications.
+            </p>
+            <div class="project-tags">
+                <span class="project-tag">HTML</span>
+                <span class="project-tag">CSS</span>
+                <span class="project-tag">Python</span>
+                <span class="project-tag">MySQL</span>
+            </div>
+            <p style="margin-top: 12px;"><strong>Status:</strong> In Development</p>
+            <div class="project-actions">
+                <a href="https://github.com/YOUR-USERNAME" target="_blank" class="btn outline-btn">
+                    <i class="fab fa-github"></i> Code
+                </a>
+            </div>
+        </div>
+
+        <div class="card project-card">
+            <div class="project-banner">
+                <i class="fas fa-users-cog"></i>
+            </div>
+            <h3>Staff Management System</h3>
+            <p>
+                A Python and MySQL application built for 
+                performing full CRUD operations to insert, view, 
+                update, and delete staff records efficiently.
+            </p>
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">CRUD</span>
+            </div>
+            <p style="margin-top: 12px;"><strong>Status:</strong> Practice Project</p>
+            <div class="project-actions">
+                <a href="https://github.com/YOUR-USERNAME" target="_blank" class="btn outline-btn">
+                    <i class="fab fa-github"></i> Code
+                </a>
+            </div>
+        </div>
+
+        <div class="card project-card">
+            <div class="project-banner">
+                <i class="fas fa-file-excel"></i>
+            </div>
+            <h3>Student Records Manager</h3>
+            <p>
+                A Python utility application for managing student 
+                data using dictionaries, lists, and automated 
+                Excel data processing via pandas.
+            </p>
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Pandas</span>
+                <span class="project-tag">Excel</span>
+            </div>
+            <p style="margin-top: 12px;"><strong>Status:</strong> Practice Project</p>
+            <div class="project-actions">
+                <a href="https://github.com/YOUR-USERNAME" target="_blank" class="btn outline-btn">
+                    <i class="fab fa-github"></i> Code
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CERTIFICATIONS & ACHIEVEMENTS -->
+<section id="certifications">
+    <div class="section-title">
+        <h2>Certifications & <span class="accent">Achievements</span></h2>
+        <p>Continuous learning and technical milestones</p>
+    </div>
+
+    <div class="cert-grid">
+        <div class="cert-card">
+            <div class="cert-icon">
+                <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Python Programming Basics</h3>
+            <p>Completed foundational training in Python programming, logic building, and data structures.</p>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-icon">
+                <i class="fas fa-award"></i>
+            </div>
+            <h3>Database Management (MySQL)</h3>
+            <p>Trained in relational database design, writing complex SQL queries, and Python-MySQL integration.</p>
+        </div>
+
+        <div class="cert-card">
+            <div class="cert-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Full Stack Development Training</h3>
+            <p>Acquiring hands-on practical experience through active internship tasks at Logirtha Tech.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="section-title">
+        <h2>Contact <span class="accent">Me</span></h2>
+        <p>Let's connect and communicate</p>
+    </div>
+
+    <p class="contact-intro">
+        I would be happy to connect with you.
+        Visit my GitHub profile, connect with me on LinkedIn,
+        or send me an email.
+    </p>
+
+    <div class="contact-grid">
+
+        <a href="https://github.com/YOUR-USERNAME"
+           target="_blank" rel="noopener noreferrer"
+           class="card contact-card">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+            <p>Explore my repositories and coding projects.</p>
+            <span>Visit GitHub <i class="fas fa-arrow-right"></i></span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/YOUR-PROFILE/"
+           target="_blank" rel="noopener noreferrer"
+           class="card contact-card">
+            <i class="fab fa-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <p>Connect with me professionally.</p>
+            <span>Connect on LinkedIn <i class="fas fa-arrow-right"></i></span>
+        </a>
+
+        <a href="mailto:YOUR-EMAIL@example.com"
+           class="card contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>Send me an email for communication.</p>
+            <span>Send Email <i class="fas fa-arrow-right"></i></span>
+        </a>
+
+    </div>
+
+    <div class="theme-picker">
+        <span>Choose theme:</span>
+        <button class="theme-dot peach" onclick="setPalette('peach')" title="Peach"></button>
+        <button class="theme-dot pink" onclick="setPalette('pink')" title="Pink"></button>
+        <button class="theme-dot blue" onclick="setPalette('blue')" title="Blue"></button>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Nishanthi R. All Rights Reserved.</p>
+    <p>Designed with HTML, CSS and JavaScript.</p>
+</footer>
+
+<!-- DIGITAL CARD MODAL -->
+<div class="modal" id="digitalCardModal">
+    <div class="digital-card">
+        <button class="close-modal" onclick="closeDigitalCard()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <div class="digital-avatar">NR</div>
+        <h2>Nishanthi R</h2>
+        <p class="digital-role">Full Stack Development Intern</p>
+
+        <div class="digital-info">
+            <p><i class="fas fa-map-marker-alt"></i> Thanjavur, India</p>
+            <p><i class="fas fa-user"></i> Nishanthi R</p>
+            <p><i class="fas fa-phone"></i> 1234567890</p>
+            <p><i class="fas fa-building"></i> Logirtha Tech Pvt. Ltd.</p>
+            <p><i class="fas fa-envelope"></i> nishanthi@example.com</p>
+        </div>
+
+        <div class="digital-actions">
+            <button class="btn" onclick="copyPortfolioLink()">
+                <i class="fas fa-copy"></i> Copy Link
+            </button>
+            <button class="btn outline-btn" onclick="downloadContact()">
+                <i class="fas fa-address-card"></i> Save Contact
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- CHATBOT BUTTON -->
+<button class="chat-toggle" onclick="toggleChat()">
+    <i class="fas fa-comments"></i>
+</button>
+
+<!-- CHATBOT -->
+<div class="chat-box" id="chatBox">
+    <div class="chat-header">
+        <span><i class="fas fa-robot"></i> Portfolio Assistant</span>
+        <button onclick="toggleChat()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+        <div class="chat-message bot-message">
+            Welcome! Feel free to ask me about Nishanthi's skills,
+            education, certifications, internship, and projects.
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="chatInput"
+               placeholder="Type your message..."
+               onkeydown="if(event.key==='Enter') sendMessage()">
+        <button onclick="sendMessage()">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+
+/* DARK AND LIGHT MODE */
+
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", function() {
+    document.body.classList.toggle("dark");
+
+    themeToggle.innerHTML = document.body.classList.contains("dark")
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+});
+
+
+/* THEME COLORS */
+
+function setPalette(color) {
+    document.body.classList.remove("peach","pink","blue");
+    document.body.classList.add(color);
+}
+
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+    navLinks.classList.toggle("show");
+});
+
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("show");
+    });
+});
+
+
+/* DIGITAL BUSINESS CARD */
+
+function openDigitalCard() {
+    document.getElementById("digitalCardModal").classList.add("show");
+}
+
+function closeDigitalCard() {
+    document.getElementById("digitalCardModal").classList.remove("show");
+}
+
+document.getElementById("digitalCardModal").addEventListener("click", function(event) {
+    if(event.target === this) closeDigitalCard();
+});
+
+function copyPortfolioLink() {
+    const portfolioLink = window.location.href;
+
+    if(navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(portfolioLink)
+            .then(() => alert("Portfolio link copied successfully!"))
+            .catch(() => prompt("Copy your portfolio link:", portfolioLink));
+    } else {
+        prompt("Copy your portfolio link:", portfolioLink);
+    }
+}
+
+function downloadContact() {
+    const vCard = `BEGIN:VCARD
+VERSION:3.0
+FN:Nishanthi R
+TITLE:Full Stack Development Intern
+ORG:Logirtha Tech Pvt. Ltd.
+ADR:;;Thanjavur;;;India
+TEL:1234567890
+EMAIL:nishanthi@example.com
+URL:${window.location.href}
+END:VCARD`;
+
+    const blob = new Blob([vCard], {type:"text/vcard"});
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "Nishanthi_R_Contact.vcf";
+    link.click();
+    URL.revokeObjectURL(link.href);
+}
+
+
+/* CHATBOT */
+
+function toggleChat() {
+    document.getElementById("chatBox").classList.toggle("show");
+}
+
+function addMessage(message,type) {
+    const chatMessages = document.getElementById("chatMessages");
+    const messageDiv = document.createElement("div");
+
+    messageDiv.className = "chat-message " + type;
+    messageDiv.textContent = message;
+
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function sendMessage() {
+    const input = document.getElementById("chatInput");
+    const message = input.value.trim();
+
+    if(message === "") return;
+
+    addMessage(message,"user-message");
+    input.value = "";
+
+    const lowerMessage = message.toLowerCase();
+    let reply = "";
+
+    if(
+        lowerMessage.includes("skill") ||
+        lowerMessage.includes("technology") ||
+        lowerMessage.includes("programming")
+    ) {
+        reply = "Nishanthi's skills include Python, HTML, CSS, JavaScript, MySQL, Django, and Excel.";
+    }
+
+    else if(
+        lowerMessage.includes("project") ||
+        lowerMessage.includes("fairqueue") ||
+        lowerMessage.includes("hospital") ||
+        lowerMessage.includes("staff") ||
+        lowerMessage.includes("student")
+    ) {
+        reply = "Her projects include FairQueue Hospital Management, Staff Management System using Python and MySQL, and Student Records Manager using Python and Excel.";
+    }
+
+    else if(
+        lowerMessage.includes("internship") ||
+        lowerMessage.includes("company") ||
+        lowerMessage.includes("logirtha")
+    ) {
+        reply = "Nishanthi is currently learning Full Stack Development as an intern at Logirtha Tech Pvt. Ltd., Thanjavur.";
+    }
+
+    else if(
+        lowerMessage.includes("education") ||
+        lowerMessage.includes("college") ||
+        lowerMessage.includes("school") ||
+        lowerMessage.includes("cgpa")
+    ) {
+        reply = "Nishanthi is an undergraduate student at E.G.S. Pillay Engineering College with an impressive 9.5 CGPA, and scored 90% in her 12th standard and 95% in her 10th standard.";
+    }
+
+    else if(
+        lowerMessage.includes("certification") ||
+        lowerMessage.includes("certificate") ||
+        lowerMessage.includes("achievement")
+    ) {
+        reply = "Nishanthi has certifications/training in Python Programming Basics, Database Management (MySQL), and Full Stack Development.";
+    }
+
+    else if(
+        lowerMessage.includes("contact") ||
+        lowerMessage.includes("email") ||
+        lowerMessage.includes("linkedin") ||
+        lowerMessage.includes("github")
+    ) {
+        reply = "You can connect with Nishanthi via GitHub, LinkedIn, or Email through the Contact section at the bottom of the page, or by clicking the Digital Card icon!";
+    }
+
+    else if(
+        lowerMessage.includes("resume") ||
+        lowerMessage.includes("cv")
+    ) {
+        reply = "You can check out all her details, skills, and projects right here on her portfolio website, or download her contact details using the Digital Business Card modal.";
+    }
+
+    else if(
+        lowerMessage.includes("about") ||
+        lowerMessage.includes("who are you") ||
+        lowerMessage.includes("nishanthi")
+    ) {
+        reply = "Nishanthi R is an enthusiastic learner interested in programming, web development, and software development.";
+    }
+
+    else if(
+        lowerMessage.includes("hello") ||
+        lowerMessage.includes("hi") ||
+        lowerMessage.includes("hey")
+    ) {
+        reply = "Hello! Welcome. Feel free to ask me about Nishanthi's skills, education, certifications, internship, or projects.";
+    }
+
+    else {
+        reply = "Sorry! I can answer questions related to Nishanthi's skills, education, certifications, internship, projects, and contact info.";
+    }
+
+    addMessage(reply,"bot-message");
+}
+
+
+/* ANIMATED HOME BACKGROUND */
+
+const canvas = document.getElementById("heroCanvas");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+}
+
+window.addEventListener("resize",resizeCanvas);
+resizeCanvas();
+
+class Particle {
+    constructor() {
+        this.x = Math.random()*canvas.width;
+        this.y = Math.random()*canvas.height;
+        this.size = Math.random()*2+1;
+        this.speedX = (Math.random()-.5)*.6;
+        this.speedY = (Math.random()-.5)*.6;
+    }
+
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(this.x>canvas.width) this.x=0;
+        if(this.x<0) this.x=canvas.width;
+        if(this.y>canvas.height) this.y=0;
+        if(this.y<0) this.y=canvas.height;
+    }
+
+    draw() {
+        ctx.fillStyle="rgba(37,99,235,.35)";
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+        ctx.fill();
+    }
+}
+
+function createParticles() {
+    particles=[];
+    for(let i=0;i<55;i++) {
+        particles.push(new Particle());
+    }
+}
+
+function animateParticles() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    particles.forEach(function(particle) {
+        particle.update();
+        particle.draw();
+    });
+
+    requestAnimationFrame(animateParticles);
+}
+
+createParticles();
+animateParticles();
+
+
+/* SCROLL SLIDE ANIMATIONS */
+
+document.addEventListener("DOMContentLoaded",function() {
+
+    const leftElements = document.querySelectorAll(
+        ".about-grid .card:nth-child(odd)"
+    );
+
+    const rightElements = document.querySelectorAll(
+        ".about-grid .card:nth-child(even)"
+    );
+
+    const normalElements = document.querySelectorAll(
+        ".section-title, .education-card, .experience-card, .project-card, .cert-card, .contact-card"
+    );
+
+    leftElements.forEach(element => {
+        element.classList.add("reveal-left");
+    });
+
+    rightElements.forEach(element => {
+        element.classList.add("reveal-right");
+    });
+
+    normalElements.forEach(element => {
+        element.classList.add("reveal");
+    });
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add("active");
+            } else {
+                entry.target.classList.remove("active");
+            }
+        });
+    }, {
+        threshold:0.15
+    });
+
+    document.querySelectorAll(
+        ".reveal,.reveal-left,.reveal-right"
+    ).forEach(element => {
+        observer.observe(element);
+    });
+
+});
+
+</script>
+
+</body>
+</html>
